@@ -1,0 +1,31 @@
+class Computer {
+    int cpu;
+    void Crash(int numTimes) {
+        int i;
+        for (i = 0; i < numTimes; i = i + 1) 
+            Print("sad\n");
+    }
+}
+
+class Mac extends Computer {
+    int mouse;
+    void add(int numTimes) {
+    	super.Crash(numTimes);
+        Print("ack!");
+    }
+}
+
+class MM extends Mac {
+	void Crash(int numTimes){
+		Print("yes\n");
+		super.Crash(numTimes - 1);
+	}
+}
+
+class Main {
+    static void main() {
+        class MM powerbook;
+        powerbook = new MM();
+        powerbook.Crash(2);
+    }
+}
